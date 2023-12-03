@@ -22,8 +22,9 @@ namespace GeneralAlgorithms.Tests.Algorithms.Polygons
 			partitioner = new GridPolygonPartitioning();
 			utils = new GridPolygonUtils();
 		}
+        // <image url="$(ProjectDir)\DocumentImages\PolygonPartition00.png"/>
 
-		[Test]
+        [Test]
 		public void GetPolygons_PlusShape()
 		{
 			var polygon = new PolygonGrid2DBuilder()
@@ -82,8 +83,9 @@ namespace GeneralAlgorithms.Tests.Algorithms.Polygons
 				Assert.AreEqual(expected[0].Count, rotated.Count);
 			}
 		}
+        // <image url="$(ProjectDir)\DocumentImages\PolygonPartition02.png"/>
 
-		[Test]
+        [Test]
 		public void GetPolygons_LShape()
 		{
 			var polygon = new PolygonGrid2DBuilder()
@@ -134,7 +136,7 @@ namespace GeneralAlgorithms.Tests.Algorithms.Polygons
 				Assert.AreEqual(expected[0].Count, rotated.Count);
 			}
 		}
-
+		// <image url="$(ProjectDir)\DocumentImages\PolygonPartition01.png"/>
 		[Test]
 		public void GetPolygons_AnotherShape()
 		{
@@ -188,8 +190,9 @@ namespace GeneralAlgorithms.Tests.Algorithms.Polygons
 				Assert.AreEqual(expected[0].Count, rotated.Count);
 			}
 		}
+        // <image url="$(ProjectDir)\DocumentImages\PolygonPartition03.png"/>
 
-		[Test]
+        [Test]
 		public void GetPolygons_ComplexShape()
 		{
 			var polygon = new PolygonGrid2DBuilder()
