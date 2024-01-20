@@ -13,10 +13,10 @@ namespace Edgar.Geometry
 	/// A class representing an immutable polygon where each of its vertices has integer coordinates.
 	/// </summary>
 	/// <remarks>
-	/// Several invariants hold:
-	/// - a polygon has at least 4 points
-	/// - all lines must be parallel to one of the axis
-	/// - no two adjacent line can be both horizontal or both vertical
+	/// Several invariants hold:<para/>
+	/// - a polygon has at least 4 points<para/>
+	/// - all lines must be parallel to one of the axis<para/>
+	/// - no two adjacent line can be both horizontal or both vertical<para/>
 	/// - points are in a clockwise order
 	/// </remarks>
 	public class PolygonGrid2D
@@ -47,7 +47,9 @@ namespace Edgar.Geometry
             hash = ComputeHash();
             BoundingRectangle = GetBoundingRectabgle();
 		}
-
+		/// <summary>
+		/// 检验完整性
+		/// </summary>
         private void CheckIntegrity()
 		{
 			// Each polygon must have at least 4 vertices
