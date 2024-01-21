@@ -17,8 +17,8 @@ namespace Edgar.Legacy.Utils.Statistics
                 var benchmarkResult = result.BenchmarkResults[i];
                 var benchmarkResultReference = referenceResult.BenchmarkResults[i];
 
-                var successRate = benchmarkResult.Runs.Count(x => x.IsSuccessful) / (double) benchmarkResult.Runs.Count;
-                var successRateReference = benchmarkResultReference.Runs.Count(x => x.IsSuccessful) / (double) benchmarkResultReference.Runs.Count;
+                var successRate = benchmarkResult.Runs.Count(x => x.IsSuccessful) / (double)benchmarkResult.Runs.Count;
+                var successRateReference = benchmarkResultReference.Runs.Count(x => x.IsSuccessful) / (double)benchmarkResultReference.Runs.Count;
 
                 if (successRate < successRateThreshold && successRateReference < successRateThreshold)
                 {
@@ -38,14 +38,20 @@ namespace Edgar.Legacy.Utils.Statistics
             return GetBoxPlotValues(timeDifferences, excludeOutliers);
         }
 
+        /// <summary>
+        /// 获取箱形/箱线图数据
+        /// </summary>
+        /// <param name="values"></param>
+        /// <param name="excludeOutliers"></param>
+        /// <returns></returns>
         public static BoxPlotValues GetBoxPlotValues(IEnumerable<double> values, bool excludeOutliers = true)
         {
             var orderedValues = values.ToList();
             orderedValues.Sort();
 
             var median = orderedValues.GetMedian();
-            var q1 = orderedValues[(int) Math.Floor(orderedValues.Count * 1 / 4d)];
-            var q3 = orderedValues[(int) Math.Floor(orderedValues.Count * 3 / 4d)];
+            var q1 = orderedValues[(int)Math.Floor(orderedValues.Count * 1 / 4d)];
+            var q3 = orderedValues[(int)Math.Floor(orderedValues.Count * 3 / 4d)];
             var minimum = orderedValues[0];
             var maximum = orderedValues.Last();
 
